@@ -11,3 +11,34 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.body {
+  font-family: "Roboto", sans-serif;
+  font-weight: 100;
+  margin: 0 auto;
+  box-sizing: border-box;
+  height: 100vh;
+  position: relative; 
+} 
+.body h2 {
+    color: #0d6db0;
+    font-weight: 600;
+    text-align: center;
+    font-size: 2rem; }
+
+.header__burgerMenu{
+  justify-content: space-between;
+  flex-grow: unset !important;
+  width: 57.47126%;
+}
+
+.header__search{
+  justify-content: center;
+}
+
+.header__logo {
+  width: 50px; }
+
+
+.header__form {
+  width: 50%; }

@@ -1,7 +1,12 @@
 import React from 'react';
+import ItemCount from './ItemCount';
 
 export default function ItemListContainer({teclados, mouse, monitor}) {
 
+
+    function onAdd(cant){
+        alert("Agregaste " + cant + " productos al carrito!")
+    }
     return (
         <>
         
@@ -11,7 +16,7 @@ export default function ItemListContainer({teclados, mouse, monitor}) {
             <li>{mouse}</li>
             <li>{monitor}</li>
         </ul>
-        
+        <ItemCount stock="5" initial={1} onAdd={onAdd}/>
         </>
     )
 }

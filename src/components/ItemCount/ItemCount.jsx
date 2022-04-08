@@ -1,24 +1,27 @@
 import React, { useState } from 'react';
 import Button from 'react-bootstrap/Button';
 
-
-export default function ItemCount({stock, initial, onAdd}) {
-    const [cant, setCant] = useState(initial);
+export default function ItemCount({stock, onAdd}) {
+    const [cant, setCant] = useState(0);
 
     const Incrementar = ()=>{
-        if (cant <= stock){
+        if (cant < stock){
             setCant(cant + 1);
         }
     };
 
     const Disminuir = ()=>{
-        if(cant >= initial){
+        if(cant > 0){
             setCant(cant - 1);
         }
     };
 
     const Reset = ()=>{
-        setCant(1);
+        setCant(0);
+    }
+
+    function onAdd(cant){
+        alert("Agregaste " + cant + " productos al carrito!")
     }
 
     return (

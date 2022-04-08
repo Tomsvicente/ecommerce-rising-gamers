@@ -1,0 +1,13 @@
+.containerCompleto {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    margin-top: 2rem;
+}
+
+.containerProd{
+    display: inherit;
+    margin-top: 2rem;
+    justify-content: space-evenly;
+
+}

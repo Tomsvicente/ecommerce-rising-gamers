@@ -1,0 +1,21 @@
+.carouselImg{
+    max-width: 50%;
+}
+.d-flex{
+    justify-content: center;
+}
+
+.contador{
+    height: 50px;
+    margin: 6px 0 0 0;
+    padding: 0;
+    color: black;
+}
+
+.btnContainer{
+    display: flex;
+    align-items: center;
+    margin-left: 1rem;
+    justify-content: space-around;
+    width: 50%;
+}

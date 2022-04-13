@@ -9,6 +9,8 @@ return (
             nombre = {p.nombre}
             precio = {p.precio}
             imagen = {p.imagen}
+            resumen = {p.resumen}
+            descripcion = {p.descripcion}
         />
     ))
 )

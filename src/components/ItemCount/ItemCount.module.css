@@ -1,0 +1,41 @@
+.cant, .btnSumar, .btnDisminuir {
+    display: block;
+    float: left;
+    color : black;
+  }
+  
+  .cant {
+    font-size: 19px;
+    line-height: 50px;
+    width: 70px;
+    text-align: center;
+  }
+  
+  .btnSumar, .btnDisminuir {
+    background: #fcfcfc;
+    border: none;
+    font-size: 30px;
+    font-weight: 300;
+    height: 100%;
+    padding: 0 20px;
+    -webkit-transition: background .2s linear;
+    -moz-transition: background .2s linear;
+    -ms-transition: background .2s linear;
+    -o-transition: background .2s linear;
+    transition: background .2s linear;
+  }
+  
+  .btnSumar:hover, .btnDisminuir:hover {
+    background: #7d8181;
+    color: #fff;
+    cursor: pointer;
+  }
+  
+  .btnSumar {
+    line-height: 50px;
+  }
+  
+  .btnDisminuir {
+    line-height: 47px;
+  }
+

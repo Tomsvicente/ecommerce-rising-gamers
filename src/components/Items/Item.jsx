@@ -3,18 +3,18 @@ import { Card } from 'react-bootstrap'
 import ItemCount from '../ItemCount/ItemCount'
 import {Link} from 'react-router-dom'
 
-function Item({id, nombre, precio, imagen}) {
+function Item({prod}) {
 return (
     <>
-        <Card key={id} style={{ width: '18rem' }}>
-            <Card.Img variant="top" src={imagen} />
+        <Card key={prod.id} style={{ width: '18rem' }}>
+            <Card.Img variant="top" src={prod.imagen} />
             <Card.Body>
-                <Card.Title>{nombre}</Card.Title>
+                <Card.Title>{prod.nombre}</Card.Title>
                 <Card.Text>
-                    Precio: {precio}
+                    Precio: {prod.precio}
                 </Card.Text>
                 <ItemCount stock={5}/>
-                <Link className="mt-3" variant="outline-secondary" to={`/item/${id}`}>Ver detalle</Link>
+                <Link className="mt-3" variant="outline-secondary" to={`/item/${prod.id}`}>Ver detalle</Link>
             </Card.Body>
         </Card>
     </>

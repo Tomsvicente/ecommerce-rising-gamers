@@ -21,8 +21,8 @@ export default function ItemCount({stock, onAdd}) {
         setCant(0);
     }
 
-    function onAdd(cant){
-        alert("Agregaste " + cant + " productos al carrito!")
+    function Click(){
+        onAdd(cant)
     }
 
     return (
@@ -33,7 +33,7 @@ export default function ItemCount({stock, onAdd}) {
             <Button className={s.btnDisminuir} onClick={Disminuir} variant="outline-secondary">-</Button>
         </div>    
         <div className={s.btnContainer}>   
-        <Button className="Agregar" onClick={() => onAdd(cant)} variant="outline-secondary">Agregar al carrito</Button>
+        <Button className="Agregar" onClick={Click} variant="outline-secondary">Agregar al carrito</Button>
         <Button className="Reset" onClick={Reset} variant="outline-secondary">Reset</Button>
         </div> 
         </>

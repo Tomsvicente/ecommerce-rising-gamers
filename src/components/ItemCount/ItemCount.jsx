@@ -1,9 +1,12 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import Button from 'react-bootstrap/Button';
 import s from './ItemCount.module.css';
+import { cartContext } from '../CartContext';
 
-export default function ItemCount({stock, onAdd}) {
+export default function ItemCount({stock, onAdd, producto}) {
     const [cant, setCant] = useState(0);
+
+    const {addItem} = useContext(cartContext);
 
     const Incrementar = ()=>{
         if (cant < stock){
@@ -23,6 +26,7 @@ export default function ItemCount({stock, onAdd}) {
 
     function Click(){
         onAdd(cant)
+        addItem({...producto, cantidad: cant})
     }
 
     return (
@@ -37,5 +41,5 @@ export default function ItemCount({stock, onAdd}) {
         <Button className="Reset" onClick={Reset} variant="outline-secondary">Reset</Button>
         </div> 
         </>
-    );
-}
+    )
+};

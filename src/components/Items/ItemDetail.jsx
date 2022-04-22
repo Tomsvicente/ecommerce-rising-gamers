@@ -1,6 +1,6 @@
 import React , {useState} from 'react'
 import ItemCount from '../ItemCount/ItemCount';
-import { Carousel} from 'react-bootstrap';
+import { Carousel , Button} from 'react-bootstrap';
 import s from './ItemDetail.module.css';
 import { Link } from 'react-router-dom';
 
@@ -49,7 +49,7 @@ export default function ItemDetail({producto}) {
                             <p className="lead">{producto.descripcion}</p>
                             <p className="lead">{producto.categoria}</p>
                             <div className="d-flex">
-                                {  number===0 ? <ItemCount stock={5} onAdd={onAdd} />: <Link to='/cart' className='s.btnContainer'>Ir al carrito</Link> }
+                                {  number===0 ? <ItemCount stock={5} onAdd={onAdd} producto={producto} />: <Button variant="outline-secondary"><Link to='/cart' className='link'>Ir al carrito</Link></Button> }
                             </div>
                         </div>
                     </div>

@@ -48,3 +48,12 @@ code {
     justify-content: center;
     align-items: center;
 }
+
+.link{
+  text-decoration: none;
+  color: #6c757d;
+}
+
+.link:hover{
+  color: white;
+}

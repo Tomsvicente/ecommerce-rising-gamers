@@ -26,7 +26,7 @@ export default function NavBar() {
                                 <a className="nav-link active text-white-50 fw-bold" aria-current="page" href="views/login.html">Login</a>
                             </li>
                             <li className="nav-item">
-                                <a className="nav-link active text-white-50 fw-bold" aria-current="page" href="views/carrito.html"><i className="fas fa-shopping-cart"/></a>
+                                <Link className="nav-link active text-white-50 fw-bold" aria-current="page" to="/cart"><i className="fas fa-shopping-cart"/></Link>
                             </li>
                         </ul>
                     </div>

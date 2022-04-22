@@ -1,5 +1,5 @@
 import React from 'react'
-import { Card } from 'react-bootstrap'
+import { Button, Card } from 'react-bootstrap'
 import ItemCount from '../ItemCount/ItemCount'
 import {Link} from 'react-router-dom'
 
@@ -14,7 +14,7 @@ return (
                     Precio: {prod.precio}
                 </Card.Text>
                 <ItemCount stock={5}/>
-                <Link className="mt-3" variant="outline-secondary" to={`/item/${prod.id}`}>Ver detalle</Link>
+                <Button variant="outline-secondary"><Link className="link mt-3" variant="outline-secondary" to={`/item/${prod.id}`}>Ver detalle</Link></Button>
             </Card.Body>
         </Card>
     </>

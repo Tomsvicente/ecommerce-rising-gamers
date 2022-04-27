@@ -2,6 +2,7 @@ import React, { useContext }from 'react';
 import {cartContext} from './CartContext'
 import Button from 'react-bootstrap/Button';
 import { Link } from 'react-router-dom';
+import "./_CartStyles.css";
 
 export default function Cart() {
     const { cart, clear , removeItem} = useContext(cartContext)
@@ -16,15 +17,15 @@ export default function Cart() {
                     <div className="col-lg-10 offset-lg-1">
                         <div className="cart_container">
                             <div className="cart_items">
+                                <ul  className="cart_list">
                                     {cart.length !== 0 ? (
                                         cart.map((p) => {
                                             const subtotal = parseInt(p.cantidad) * parseInt(p.precio)
                                             total.push(subtotal)
 
                                             return(
-                                                <ul key={p.id} className="cart_list">
-                                                    <li className="cart_item clearfix">
-                                                        <div className="cart_item_image"><img src={p.imagen} alt="producto"/></div>
+                                                    <li key={p.id} className="cart_item clearfix">
+                                                        <div className="cart_item_image mt-4"><img src={p.imagen} alt="producto"/></div>
                                                         <div className="cart_item_info d-flex flex-md-row justify-content-between">
                                                             <div className="cart_item_name cart_info_col">
                                                                 <div className="cart_item_title">Nombre</div>
@@ -48,23 +49,20 @@ export default function Cart() {
                                                             </div>
                                                         </div>
                                                     </li>
-                                                </ul>
                                             )
                                         })
                                 ) : (
                                     <>
-                                        <section>
-                                            <div className="container pt-5 mt-5 placeholder">
-                                            <h1>Esto parece que está un poco vacío</h1>
+                                        <section className="container-fluid pt-5 my-5">
+                                            <div >
+                                            <h2>Esto parece que está un poco vacío</h2>
                                             <p>¿No sabés qué comprar? seguí mirando nuestros productos</p>
-                                            <Button>
-                                                <Link to="/">Volver al inicio</Link>
-                                            </Button>
+                                            <Link to="/" className="btn btn-outline-dark btn-lg mx-2 px-5">Volver al inicio</Link>
                                             </div>
                                         </section>
                                     </>
                                 )}
-    
+                            </ul>
                             </div>
                             <div className="order_total">
                                 <div className="order_total_content text-end">
@@ -73,8 +71,8 @@ export default function Cart() {
                                 </div>
                             </div>
                             <div className="cart_buttons">
-                                <Button type="button" className="btn btn-outline-dark btn-lg px-5"><a href="/index.html" className="linkOrden">Continuar Comprando</a></Button>
-                                <Button type="button" className="btn btn-dark btn-lg px-5 btnCompra" onClick={clear}>Comprar</Button> 
+                                <Link to="/" className="btn btn-outline-dark btn-lg mx-2 px-5">Seguir Comprando</Link>
+                                <Button type="button" className="btn btn-dark btn-lg ml-2 px-5 btnCompra" onClick={clear}>Comprar</Button> 
                             </div>
                         </div>
                     </div>

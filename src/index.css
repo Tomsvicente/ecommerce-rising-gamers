@@ -12,7 +12,7 @@ code {
     monospace;
 }
 
-.body {
+body {
   font-family: "Roboto", sans-serif;
   font-weight: 100;
   margin: 0 auto;
@@ -20,7 +20,7 @@ code {
   height: 100vh;
   position: relative; 
 } 
-.body h2 {
+body h2 {
     color: #0d6db0;
     font-weight: 600;
     text-align: center;

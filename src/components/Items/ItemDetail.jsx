@@ -9,6 +9,7 @@ export default function ItemDetail({producto}) {
 
     function onAdd(contar){
         setNumber(contar);
+        console.log(contar);
     }
     return (
         <> 
@@ -43,11 +44,12 @@ export default function ItemDetail({producto}) {
                             <div className="small mb-1">Unidad. 142.222</div>
                             <h1 className="display-5 fw-bolder contact100-more-highlight">{producto.nombre}</h1>
                             <div className="fs-5 mb-5">
-                                <span className="text-decoration-line-through">$14.000</span>
+                                <span className="text-decoration-line-through">{(producto.precio) * 2}</span>
                                 <span>{producto.precio}</span>
+                                <p className="lead">{producto.categoria}</p>
                             </div>
                             <p className="lead">{producto.descripcion}</p>
-                            <p className="lead">{producto.categoria}</p>
+                            
                             <div className="d-flex">
                                 {  number===0 ? <ItemCount stock={5} onAdd={onAdd} producto={producto} />: <Button variant="outline-secondary"><Link to='/cart' className='link'>Ir al carrito</Link></Button> }
                             </div>

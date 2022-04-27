@@ -4,8 +4,8 @@ import NavBar from "./components/NavBar";
 import ItemDetailContainer from "./components/Items/ItemDetailContainer";
 import ItemListContainer from "./components/Items/ItemListContainer";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import CartWidget from "./components/CartWidget";
-import CartContextProvider from "./components/CartContext";
+import Cart from "./components/Cart/Cart";
+import CartContextProvider from "./components/Cart/CartContext";
 
 export default function App() {
   return (
@@ -20,7 +20,7 @@ export default function App() {
               element={<ItemListContainer />}
             />
             <Route path="/item/:id" element={<ItemDetailContainer />} />
-            <Route path="/cart" element={<CartWidget />} />
+            <Route path="/cart" element={<Cart/>} />
           </Routes>
         </div>
       </BrowserRouter>

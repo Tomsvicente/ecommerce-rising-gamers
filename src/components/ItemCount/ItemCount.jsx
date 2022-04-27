@@ -1,7 +1,7 @@
 import React, { useState, useContext } from 'react';
 import Button from 'react-bootstrap/Button';
 import s from './ItemCount.module.css';
-import { cartContext } from '../CartContext';
+import { cartContext } from '../Cart/CartContext';
 
 export default function ItemCount({stock, onAdd, producto}) {
     const [cant, setCant] = useState(0);

@@ -1,6 +1,7 @@
 import React from "react"
 import { Link } from "react-router-dom"
 import Logo from "../img/logo.png"
+import CartWidget from "./Cart/CartWidget"
 
 export default function NavBar() {
     return <>
@@ -26,7 +27,7 @@ export default function NavBar() {
                                 <a className="nav-link active text-white-50 fw-bold" aria-current="page" href="views/login.html">Login</a>
                             </li>
                             <li className="nav-item">
-                                <Link className="nav-link active text-white-50 fw-bold" aria-current="page" to="/cart"><i className="fas fa-shopping-cart"/></Link>
+                                <CartWidget/>
                             </li>
                         </ul>
                     </div>

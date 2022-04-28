@@ -5,9 +5,19 @@
     margin-top: 2rem;
 }
 
-.containerProd{
+.containerProd {
     display: inherit;
     margin-top: 2rem;
     justify-content: space-evenly;
+}
 
+.carrusel {
+        & img {
+            margin: auto;
+        }
+
+        & .carrusel__imgH {
+            height: 600px;
+        
+    }
 }

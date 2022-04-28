@@ -1,0 +1,31 @@
+$colorFuente: #0d6db0;
+
+$cien : 100%;
+
+/* Maps y Operations */
+
+$wHeader: (
+    header__logo: 50px,
+    header__burgerMenu: $cien/1.74,
+    header__form: $cien/2
+);
+
+@each $wn, $wt in $wHeader {
+    .#{$wn}{
+        width: $wt;
+    }
+}
+
+/* Mixins */
+
+@mixin sizes ($width, $height){ 
+    height: $height;
+    width: $width;
+}
+
+
+/* Uso de extend */
+.nBordernOut{
+    outline: none;
+    border: none;
+}

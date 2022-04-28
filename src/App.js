@@ -1,4 +1,4 @@
-import "./App.css";
+import "./App.scss";
 import React from "react";
 import NavBar from "./components/NavBar";
 import ItemDetailContainer from "./components/Items/ItemDetailContainer";

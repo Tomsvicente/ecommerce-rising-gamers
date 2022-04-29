@@ -1,23 +1,28 @@
 export const productos = [
     {
         id: 1,
-        nombre: 'Monitor LG',
-        precio: '$1.00',
+        nombre: 'Monitor 24°',
+        modelo: 'Gaming',
+        resumen: 'Monitor Samsung 24°',
+        marca: 'Samsung',
         categoria: 'monitores',
-        imagen: 'https://picsum.photos/200/300/?random',
+        descripcion: 'Modelo: TUF-GTX1650-O4GD6-P-GAMING /n Motor gráfico: NVIDIA® GeForce GTX 1650 /n NVENC encorder: Turing /n Bus Standard: PCI Express 3.0 /n OpenGL: OpenGL®4.6 /n Video Memory: GDDR6 4GB /n Engine Clock: OC Mode - 1785 MHz (Boost Clock)',
+        precio: 27000,
+        imagen: '/img/monitor.png'
     },
     {
         id: 2,
-        nombre: 'Daedalus Prime',
+        nombre: 'Placa de video 1060g',
         modelo: 'Gaming',
-        marca: 'Logitech',
-        resumen: 'Mouse Logitech linea gamer',
-        categoria: 'perifericos',
-        precio: 25222,
-        imagen: 'https://picsum.photos/200/300/?random'
+        resumen: 'Placa de video GeForce',
+        marca: 'GeForce',
+        categoria: 'placas',
+        descripcion: 'Modelo: TUF-GTX1650-O4GD6-P-GAMING /n Motor gráfico: NVIDIA® GeForce GTX 1650 /n NVENC encorder: Turing /n Bus Standard: PCI Express 3.0 /n OpenGL: OpenGL®4.6 /n Video Memory: GDDR6 4GB /n Engine Clock: OC Mode - 1785 MHz (Boost Clock)',
+        precio: 125000,
+        imagen: '/img/1060g.png'
     },
     {
-        id: 4,
+        id: 3,
         nombre: 'Mouse Daedalus Prime',
         modelo: 'Gaming',
         resumen: 'Mouse Logitech linea gamer',

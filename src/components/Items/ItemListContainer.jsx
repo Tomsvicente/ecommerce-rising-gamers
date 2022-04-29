@@ -7,17 +7,24 @@ import Monitor from "../../img/monitor.png";
 import Mouse from "../../img/mouselogi.png";
 import Placa from "../../img/1060g.png";
 import { Carousel } from "react-bootstrap";
+import { collection, getDocs, getFirestore} from "firebase/firestore";
 
 export default function ItemListContainer({ }) {
     const [items, setItems] = useState([]);
 
-    const { categoryId } = useParams();
+    const { id } = useParams();
 
-    useEffect(() => {
-        PromiseProductos(categoryId)
-            .then((resultado) => setItems(resultado))
-            .catch((error) => console.log(error));
-    }, [categoryId]);
+    useEffect(()=>{
+
+        const db = getFirestore()
+        const productsRef = collection(db, "Productos")
+        getDocs(productsRef).then(res=>{
+        console.log(res.docs)
+        setItems(res.docs.map(p=>({id:p.id, ...p.data()})))
+        })
+        console.log(items)
+        
+        },[])
 
     return (
         <>
@@ -33,8 +40,8 @@ export default function ItemListContainer({ }) {
                         <img className="d-block w-25" src={Mouse} alt={Mouse} />
                     </Carousel.Item>
                 </Carousel>
-                <section class="productos">
-                    <article class="productos__contenedor">
+                <section className="productos">
+                    <article className="productos__contenedor">
                         <ItemList producto={items} />
                     </article>
                 </section>

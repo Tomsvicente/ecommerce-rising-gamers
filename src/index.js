@@ -3,6 +3,18 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import { initializeApp } from "firebase/app";
+
+const firebaseConfig = {
+  apiKey: "AIzaSyCUoRp22JTix7rIAD80QBM_ypaNXlEge64",
+  authDomain: "rising-gamers.firebaseapp.com",
+  projectId: "rising-gamers",
+  storageBucket: "rising-gamers.appspot.com",
+  messagingSenderId: "246179466053",
+  appId: "1:246179466053:web:b894c56d2ea9af6f280c2c"
+};
+
+initializeApp(firebaseConfig);
 
 ReactDOM.render(
   <React.StrictMode>

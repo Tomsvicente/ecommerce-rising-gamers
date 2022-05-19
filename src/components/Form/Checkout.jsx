@@ -54,11 +54,12 @@ export default function Checkout() {
     return (
         <>
         {ticket === "" && <> 
+        <div className="container bg-dark formContainer">
             <Form className="mt-5 container" onSubmit={() => sendOrder()}>
                 <div className="col-lg-10 offset-lg-1">
                     <Row className="mb-3">
                         <Form.Group as={Col} controlId="formGridName">
-                            <Form.Label>Nombre</Form.Label>
+                            <Form.Label className="labelsForm text-white-50 fw-bold">Nombre</Form.Label>
                             <Form.Control
                                 required
                                 type="text"
@@ -69,7 +70,7 @@ export default function Checkout() {
                         </Form.Group>
 
                         <Form.Group as={Col} controlId="formGridLName">
-                            <Form.Label>Apellido</Form.Label>
+                            <Form.Label className="labelsForm text-white-50 fw-bold">Apellido</Form.Label>
                             <Form.Control
                                 required
                                 type="text"
@@ -82,7 +83,7 @@ export default function Checkout() {
 
                     <Row>
                         <Form.Group as={Col} className="mb-3" controlId="formGridAddress1">
-                            <Form.Label>Direccion</Form.Label>
+                            <Form.Label className="labelsForm text-white-50 fw-bold">Direccion</Form.Label>
                             <Form.Control
                                 required
                                 type="text"
@@ -93,7 +94,7 @@ export default function Checkout() {
                         </Form.Group>
 
                         <Form.Group as={Col} className="mb-3" controlId="formGridPhone">
-                            <Form.Label>Telefono</Form.Label>
+                            <Form.Label className="labelsForm text-white-50 fw-bold">Telefono</Form.Label>
                             <Form.Control
                                 required
                                 type="number"
@@ -104,7 +105,7 @@ export default function Checkout() {
                         </Form.Group>
                     </Row>
                     <Form.Group as={Col} className="mb-3" controlId="formGridEmail">
-                        <Form.Label>Email</Form.Label>
+                        <Form.Label className="labelsForm text-white-50 fw-bold">Email</Form.Label>
                         <Form.Control
                             required
                             type="email"
@@ -115,6 +116,7 @@ export default function Checkout() {
                     </Form.Group>
                 </div>
             </Form>
+            </div>
             </>}
             {ticket === "" ? <Button className="btn btn-dark btn-lg ml-2 px-5 btnCompra"
                             variant="primary"

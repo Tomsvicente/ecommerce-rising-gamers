@@ -19,25 +19,21 @@ const CartContextProvider = ({ children }) => {
     console.log(cart);
 
     const removeItem = (item) => {
-        setCart(cart.filter((item) => item.id !== item.id));
+        setCart(cart.filter((producto) => producto.id !== item.id));
     };
 
     const clear = () => setCart([]);
 
-    const cant = () => {
-        return cart.reduce((total, producto) => total + producto.cantidad, 0)
-    }
+    const cant = cart.reduce((total, producto) => total + producto.cantidad, 0)
 
-    const cantItems = () => {
-        return cart.reduce((total, producto) => total +  producto.cantidad*producto.precio,0)
-    }
+
+    const total = cart.reduce((total, producto)=>total+(producto.cantidad*producto.precio), 0);
+
 
     return (
-        <>
-            <cartContext.Provider value={{cart, addItem, removeItem, clear,cant, cantItems }}>
+            <cartContext.Provider value={{cart, addItem, removeItem, clear,cant,total }}>
                 {children}
             </cartContext.Provider>
-        </>
     );
 };
 

@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import { PromiseProductos } from "../Utils/PromiseProd";
 import ItemList from "./ItemList";
 import { useParams } from "react-router-dom";
 import "./ItemListContainer.scss";
@@ -7,24 +6,28 @@ import Monitor from "../../img/monitor.png";
 import Mouse from "../../img/mouselogi.png";
 import Placa from "../../img/1060g.png";
 import { Carousel } from "react-bootstrap";
-import { collection, getDocs, getFirestore} from "firebase/firestore";
+import { collection, getDocs, getFirestore , query, where} from "firebase/firestore";
 
 export default function ItemListContainer({ }) {
     const [items, setItems] = useState([]);
 
-    const { id } = useParams();
+    const { categoryId } = useParams();
 
     useEffect(()=>{
 
         const db = getFirestore()
-        const productsRef = collection(db, "Productos")
+        let productsRef = collection(db, "Productos")
+
+        if(!categoryId) {
+            productsRef = collection(db, 'Productos');
+        } else {
+            productsRef = query(collection(db, 'Productos'), where('categoryId', '==', categoryId));
+        }
+
         getDocs(productsRef).then(res=>{
-        console.log(res.docs)
         setItems(res.docs.map(p=>({id:p.id, ...p.data()})))
-        })
-        console.log(items)
-        
-        },[])
+        })        
+        },[categoryId])
 
     return (
         <>

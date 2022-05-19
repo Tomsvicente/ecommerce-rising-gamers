@@ -3,34 +3,11 @@ import { cartContext } from './CartContext'
 import Button from 'react-bootstrap/Button';
 import { Link } from 'react-router-dom';
 import "../../App.scss";
-import { addDoc, collection, getFirestore, serverTimestamp } from 'firebase/firestore';
-import { Col, Form, Row } from 'react-bootstrap';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faTrash } from "@fortawesome/free-solid-svg-icons";
 
 export default function Cart() {
-    const { cart, clear, removeItem } = useContext(cartContext)
-    const total = [""]
-
-    const  [email, setEmail]  = useState('');
-    const  [name, setName]  = useState('');
-    const  [lName, setLName]  = useState('');
-    const  [phone, setPhone]  = useState('');
-    const  [address, setAddress]  = useState('');
-    const [ticket, setTicket] = useState();
-
-    const sendOrder = () => {
-        const order = {
-            buyer: { name, lName, phone, email, address },
-            items: cart,
-            total: total.reduce((acc, adj) => +acc + +adj),
-            date: serverTimestamp()
-        };
-
-        const db = getFirestore();
-        const ticketCollection = collection(db, "tickets");
-        addDoc(ticketCollection, order).then(({ id }) => setTicket(id));
-
-        alert("acabas de realizar tu primera compra")
-    };
+    const { cart, clear, total, removeItem } = useContext(cartContext)
 
 
     return (
@@ -46,10 +23,12 @@ export default function Cart() {
                                             {cart.length !== 0 ? (
                                                 cart.map((p) => {
                                                     const subtotal = parseInt(p.cantidad) * parseInt(p.precio)
-                                                    total.push(subtotal)
 
                                                     return (
                                                         <li key={p.id} className="cart_item clearfix">
+                                                            <div className="cart_delete">
+                                                                <FontAwesomeIcon  onClick={() => removeItem(p)} icon={faTrash} />
+                                                            </div>
                                                             <div className="cart_item_image mt-4"><img src={p.imagen} alt="producto" /></div>
                                                             <div className="cart_item_info d-flex flex-md-row justify-content-between">
                                                                 <div className="cart_item_name cart_info_col">
@@ -72,6 +51,7 @@ export default function Cart() {
                                                                     <div className="cart_item_title">Total</div>
                                                                     <div className="cart_item_text" id="carritoItemTot1">${subtotal}</div>
                                                                 </div>
+                                                            
                                                             </div>
                                                         </li>
                                                     )
@@ -92,7 +72,7 @@ export default function Cart() {
                                     <div className="order_total">
                                         <div className="order_total_content text-end">
                                             <div className="order_total_title">Total de Compra:</div>
-                                            <div className="order_total_amount" id="totalPrecio">{total.reduce((prev, next) => (+prev) + (+next))}</div>
+                                            <div className="order_total_amount" id="totalPrecio">{total}</div>
                                         </div>
                                     </div>
                                 </div>
@@ -100,100 +80,19 @@ export default function Cart() {
                         </div>
                     </div>
                 </div>
-                <Form className="mt-5 container">
-                    <div>
-                        <Row className="mb-3">
-                            <Form.Group as={Col} controlId="formGridName">
-                                <Form.Label>Nombre</Form.Label>
-                                <Form.Control
-                                    required
-                                    type="text"
-                                    value={name}
-                                    placeholder="Ingresa tu nombre"
-                                    onChange={(e) => {
-                                        setName(e.currentTarget.value);
-                                    }}
-                                />
-                            </Form.Group>
-
-                            <Form.Group as={Col} controlId="formGridLName">
-                                <Form.Label>Apellido</Form.Label>
-                                <Form.Control
-                                    required
-                                    type="text"
-                                    value={lName}
-                                    placeholder="Ingresa tu apellido"
-                                    onChange={(e) => {
-                                        setLName(e.currentTarget.value);
-                                    }}
-                                />
-                            </Form.Group>
-                        </Row>
-
-                        <Row>
-                            <Form.Group as={Col} className="mb-3" controlId="formGridAddress1">
-                                <Form.Label>Direccion</Form.Label>
-                                <Form.Control
-                                    required
-                                    type="text"
-                                    value={address}
-                                    placeholder="Ingresa tu dirección"
-                                    onChange={(e) => {
-                                        setAddress(e.currentTarget.value);
-                                    }}
-                                />
-                            </Form.Group>
-
-                            <Form.Group as={Col} className="mb-3" controlId="formGridPhone">
-                                <Form.Label>Telefono</Form.Label>
-                                <Form.Control
-                                    required
-                                    type="number"
-                                    value={phone}
-                                    placeholder="Ingresa tu Telefono"
-                                    onChange={(e) => {
-                                        setPhone(e.currentTarget.value);
-                                    }}
-                                />
-                            </Form.Group>
-                        </Row>
-                        <Form.Group as={Col} className="mb-3" controlId="formGridEmail">
-                            <Form.Label>Email</Form.Label>
-                            <Form.Control
-                                required
-                                type="email"
-                                value={email}
-                                placeholder="Ingresa tu Email"
-                                onChange={(e) => {
-                                    setEmail(e.currentTarget.value);
-                                }}
-                            />
-                        </Form.Group>
-                    </div>
-
-                    <Form.Group className="mb-3" id="formGridCheckbox">
-                        <Form.Check
-                            type="checkbox"
-                            label="Estoy de acuerdo con lo terminos y condiciones"
-                        />
-                    </Form.Group>
-                    <div className="cart_buttons">
+                <div className="cart_buttons">
                                         <Link to="/" className="btn btn-outline-dark btn-lg mx-2 px-5">Seguir Comprando</Link>
                                     
-                    <Link to="/create" className="btn btn-dark btn-lg ml-2 px-5 btnCompra">
+                    
 
-                        <Button className="btn btn-dark btn-lg ml-2 px-5 btnCompr"
+                        <Button className="btn btn-dark btn-lg ml-2 px-5 btnCompra"
                             variant="primary"
-                            ticket={ticket}
-                            onClick={() => {
-                                sendOrder()
-                            }}
-                        >
-                            Finalizar compra
+                            type="submit"
+                            disabled={cart === 0}
+                        ><Link to="/checkout" className="linkCompra" >Comprar</Link>
+                            
                         </Button>
-                    </Link>
                     </div>
-                </Form>
             </main>
         </>
     )

@@ -1,70 +1,34 @@
-# Getting Started with Create React App
+# Proyecto final React CODERHOUSE 
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Rising Gamers ecommerce
 
-## Available Scripts
+# Objetivo
 
-In the project directory, you can run:
+Este proyecto fue creado con la idea de un ecommerce de tecnologia , para el tp final del curso de React en Coderhouse
 
-### `npm start`
+### DEMO
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+![EcommerceGif](RisingGamers.gif)
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+# Características
 
-### `npm test`
+Obtener productos obtenidos de Firebase Realizar una compra y enviar los datos del comprador a la base de datos Firebase. Filtros por categorías. Agregar y quitar productos del carrito, seleccionando la cantidad deseada, vaciar el carrito. 
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+# Para clonar el proyecto en su repositorio usar el comando: 
 
-### `npm run build`
+git clone https://github.com/Tomsvicente/ecommerce-rising-gamers.git
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+# Repositorio: 
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+https://github.com/Tomsvicente/ecommerce-rising-gamers.git
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+# Librerías externas
 
-### `npm run eject`
+Se utilizaron componentes de React Bootstrap. React Router Dom para el manejo de rutas y links en el sitio. Se utiliza la base de datos Firebase. Se utilizaron estilos Sass SCSS para el diseño general del sitio y FontAwesome para utilizar algunos iconos.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+# FIREBASE
+Proyecto conectado a la base de datos de Firebase v9.6.11
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+# Deploy en:
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Proyecto creado por Tomas Vicente para CODERHOUSE

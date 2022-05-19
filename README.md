@@ -30,5 +30,7 @@ Se utilizaron componentes de React Bootstrap. React Router Dom para el manejo de
 Proyecto conectado a la base de datos de Firebase v9.6.11
 
 # Deploy en:
+https://rising-gamers.web.app
+
 
 Proyecto creado por Tomas Vicente para CODERHOUSE
